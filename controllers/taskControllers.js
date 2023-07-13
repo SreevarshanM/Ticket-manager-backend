@@ -48,15 +48,7 @@ exports.postTask = async (req, res) => {
   try {
     const { vehicle, date, contact, issue, assignedTo, name, email, service } =
       req.body;
-    if (
-      !issue ||
-      !vehicle ||
-      !contact ||
-      !assignedTo ||
-      !name ||
-      !email ||
-      !date
-    ) {
+    if (!issue || !vehicle || !contact || !name || !email || !date) {
       return res
         .status(400)
         .json({ status: false, msg: "Please enter all required details" });
